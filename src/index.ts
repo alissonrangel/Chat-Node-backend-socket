@@ -78,4 +78,4 @@ io.on('connection', socket => {
 
 app.use(router);
 
-server.listen(3000, () => console.log('Server has started on port 3000.'));
+server.listen(process.env.PORT, () => console.log(`Server has started on port ${process.env.PORT}.`));
