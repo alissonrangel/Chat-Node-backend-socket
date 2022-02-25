@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import http from 'http';
 import { Server } from "socket.io";
+import cors from 'cors';
 import router from './router';
 import { addUser, removeUser, getUser, getUsersInRoom , User} from './users'
 import dotenv from 'dotenv';
@@ -9,6 +10,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
+
+app.use(cors());
 
 const server = http.createServer(app);
 
