@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUsersInRoom = exports.getUser = exports.removeUser = exports.addUser = void 0;
+exports.getRooms = exports.getUsersInRoom = exports.getUser = exports.removeUser = exports.addUser = void 0;
 const users = [];
 const addUser = ({ id, name, room }) => {
     name = name.trim().toLowerCase();
@@ -25,3 +25,15 @@ const getUser = (id) => users.find((user) => user.id === id);
 exports.getUser = getUser;
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 exports.getUsersInRoom = getUsersInRoom;
+const getRooms = () => {
+    let rooms = [];
+    users.map((item) => {
+        if (rooms.includes(item.room)) {
+        }
+        else {
+            rooms.push(item.room);
+        }
+    });
+    return rooms;
+};
+exports.getRooms = getRooms;
